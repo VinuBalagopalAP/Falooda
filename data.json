@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Traditional Falooda",
+    "calories": 400,
+    "price_range": {
+      "min": 50,
+      "max": 100
+    },
+    "image_url": "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/05/falooda-faluda-recipe.jpg.webp",
+    "background_color": "#F8A2B1"
+  },
+  {
+    "id": 2,
+    "name": "Mango Falooda",
+    "calories": 350,
+    "price_range": {
+      "min": 60,
+      "max": 120
+    },
+    "image_url": "https://www.vegrecipesofindia.com/wp-content/uploads/2015/04/mango-falooda-recipe.jpg",
+    "background_color": "#FFDD88"
+  },
+  {
+    "id": 3,
+    "name": "Kulfi Falooda",
+    "calories": 550,
+    "price_range": {
+      "min": 100,
+      "max": 150
+    },
+    "image_url": "https://www.vegrecipesofindia.com/wp-content/uploads/2014/06/kulfi-falooda.jpg",
+    "background_color": "#9AB3F5"
+  },
+  {
+    "id": 4,
+    "name": "Chocolate Falooda",
+    "calories": 425,
+    "price_range": {
+      "min": 70,
+      "max": 120
+    },
+    "image_url": "https://img-global.cpcdn.com/recipes/beca59dbe3cedf72/1200x630cq70/photo.jpg",
+    "background_color": "#B5EAD7"
+  },
+  {
+    "id": 5,
+    "name": "Dry Fruit Falooda",
+    "calories": 425,
+    "price_range": {
+      "min": 120,
+      "max": 200
+    },
+    "image_url": "https://cookingfromheart.com/wp-content/uploads/2022/04/Royal-Falooda-3.jpg",
+    "background_color": "#F8B195"
+  }
+]

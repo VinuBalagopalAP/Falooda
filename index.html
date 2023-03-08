@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Falooda Lists</title>
+    <link rel="icon" href="logo.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Falooda Lists is a website that provides information on the name, image, calorie content, and price range of various Falooda varieties available in the Indian market."
+    />
+
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <meta property="og:title" content="Falooda Lists" />
+    <meta property="og:site_name" content="Falooda Lists" />
+    <meta property="og:url" content="http://vinu-falooda.surge.sh/" />
+    <meta
+      property="og:description"
+      content="Falooda Lists is a website that provides information on the name, image, calorie content, and price range of various Falooda varieties available in the Indian market."
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css"
+    />
+  </head>
+  <body>
+    <div class="grid mx-16 my-16 text-6xl text-center">Falooda List</div>
+    <div
+      class="grid grid-cols-1 mt-16 mx-16 my-8 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-4 p-4"
+    >
+      <!-- Dynamic card elements will be generated here -->
+    </div>
+
+    <script>
+      // Retrieve the JSON data from the file
+      fetch("data.json")
+        .then((response) => response.json())
+        .then((data) => {
+          // Manipulate the HTML elements to display the data
+          const menu = document.querySelector(".grid");
+
+          data.forEach((item) => {
+            // Create the card element
+            const card = document.createElement("div");
+            card.className =
+              "bg-white rounded-lg overflow-hidden shadow-lg shadow mt-16 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4";
+
+            // Create the image element
+            const image = document.createElement("img");
+            image.className = "w-full  object-fit lg:object-cover";
+            image.src = item.image_url;
+            image.alt = item.name;
+
+            // Create the content element
+            const content = document.createElement("div");
+            content.className = "p-4 ";
+
+            // Create the name element
+            const name = document.createElement("h2");
+            name.className = "font-bold text-3xl text-center";
+            name.textContent = item.name;
+
+            // Create the calorie element
+            const calories = document.createElement("p");
+            calories.className =
+              "text-gray-600 font-semibold text-2xl text-center";
+            calories.textContent = `Calories: ${item.calories}`;
+
+            // Create the price range element
+            const priceRange = document.createElement("p");
+            priceRange.className =
+              "text-gray-600 font-semibold text-2xl text-center";
+            priceRange.textContent = `Price Range: ₹${item.price_range.min} - ₹${item.price_range.max}`;
+
+            // Append the elements to the card and content elements
+            content.appendChild(name);
+            content.appendChild(calories);
+            content.appendChild(priceRange);
+            card.appendChild(image);
+            card.appendChild(content);
+
+            // Add the card element to the menu grid
+            menu.appendChild(card);
+          });
+        })
+        .catch((error) => console.error(error));
+    </script>
+  </body>
+</html>
